@@ -1,0 +1,265 @@
+{
+  "users": [
+    {
+      "id": "1",
+      "username": "admin",
+      "password": "admin123",
+      "fullName": "Nguyễn Quản Trị",
+      "role": "admin"
+    },
+    {
+      "id": "11",
+      "username": "admin2",
+      "password": "admin123",
+      "fullName": "Trần Trưởng Ban",
+      "role": "admin"
+    },
+    {
+      "id": "2",
+      "username": "staff",
+      "password": "staff123",
+      "fullName": "Trần Nhân Viên",
+      "role": "staff"
+    },
+    {
+      "id": "22",
+      "username": "staff2",
+      "password": "staff123",
+      "fullName": "Phạm Điều Phối",
+      "role": "staff"
+    },
+    {
+      "id": "3",
+      "username": "khach",
+      "password": "khach123",
+      "fullName": "Lê Khách Hàng",
+      "role": "customer"
+    },
+    {
+      "id": "33",
+      "username": "khach2",
+      "password": "khach123",
+      "fullName": "Vũ Minh Trí",
+      "role": "customer"
+    },
+    {
+      "id": "dsNZjmC5A9o",
+      "username": "anh",
+      "password": "123",
+      "fullName": "anh",
+      "role": "customer"
+    }
+  ],
+  "vehicles": [
+    {
+      "id": "1",
+      "name": "VinFast VF8 Plus",
+      "type": "Car",
+      "brand": "VinFast",
+      "transmission": "Tự động (Điện)",
+      "seats": 5,
+      "pricePerHour": 120000,
+      "pricePerDay": 1300000,
+      "image": "https://upload.wikimedia.org/wikipedia/commons/e/ec/VinFast_VF_8_at_Motorshow_2022.jpg",
+      "available": true,
+      "rating": 4.9,
+      "fuel": "Điện (Pin 88 kWh)"
+    },
+    {
+      "id": "2",
+      "name": "Toyota Camry 2.5Q",
+      "type": "Car",
+      "brand": "Toyota",
+      "transmission": "Tự động",
+      "seats": 5,
+      "pricePerHour": 140000,
+      "pricePerDay": 1500000,
+      "image": "https://upload.wikimedia.org/wikipedia/commons/a/ac/2018_Toyota_Camry_%28ASV70R%29_Ascent_sedan_%282018-08-27%29_01.jpg",
+      "available": true,
+      "rating": 4.8,
+      "fuel": "Xăng"
+    },
+    {
+      "id": "3",
+      "name": "Honda SH 160i ABS",
+      "type": "Motorbike",
+      "brand": "Honda",
+      "transmission": "Tay ga",
+      "seats": 2,
+      "pricePerHour": 35000,
+      "pricePerDay": 300000,
+      "image": "https://upload.wikimedia.org/wikipedia/commons/e/e9/Honda_SH150i_2020.jpg",
+      "available": false,
+      "rating": 4.7,
+      "fuel": "Xăng"
+    },
+    {
+      "id": "4",
+      "name": "VinFast VF3",
+      "type": "Car",
+      "brand": "VinFast",
+      "transmission": "Tự động (Điện)",
+      "seats": 4,
+      "pricePerHour": 80000,
+      "pricePerDay": 800000,
+      "image": "https://upload.wikimedia.org/wikipedia/commons/b/b3/VinFast_VF_3_in_Vietnam_02.jpg",
+      "available": false,
+      "rating": 4.6,
+      "fuel": "Điện (Mini SUV)"
+    },
+    {
+      "id": "5",
+      "name": "Yamaha Exciter 155 VVA",
+      "type": "Motorbike",
+      "brand": "Yamaha",
+      "transmission": "Côn tay",
+      "seats": 2,
+      "pricePerHour": 25000,
+      "pricePerDay": 200000,
+      "image": "https://upload.wikimedia.org/wikipedia/commons/b/b0/2019_Yamaha_Exciter_150_GP_Edition.jpg",
+      "available": true,
+      "rating": 4.5,
+      "fuel": "Xăng"
+    },
+    {
+      "id": "6",
+      "name": "Hyundai Accent 1.4 AT",
+      "type": "Car",
+      "brand": "Hyundai",
+      "transmission": "Tự động",
+      "seats": 5,
+      "pricePerHour": 100000,
+      "pricePerDay": 1000000,
+      "image": "https://upload.wikimedia.org/wikipedia/commons/d/dc/2018_Hyundai_Accent_SEL_1.6L_front_US.jpg",
+      "available": true,
+      "rating": 4.4,
+      "fuel": "Xăng"
+    },
+    {
+      "id": "7",
+      "name": "VinFast VF9 Plus",
+      "type": "Car",
+      "brand": "VinFast",
+      "transmission": "Tự động (Điện)",
+      "seats": 7,
+      "pricePerHour": 220000,
+      "pricePerDay": 2200000,
+      "image": "https://upload.wikimedia.org/wikipedia/commons/2/23/VinFast_VF_9_at_Motorshow_2022.jpg",
+      "available": true,
+      "rating": 5,
+      "fuel": "Điện (Pin 123 kWh)"
+    },
+    {
+      "id": "8",
+      "name": "Mazda 3 Premium",
+      "type": "Car",
+      "brand": "Mazda",
+      "transmission": "Tự động",
+      "seats": 5,
+      "pricePerHour": 110000,
+      "pricePerDay": 1100000,
+      "image": "https://upload.wikimedia.org/wikipedia/commons/c/ca/2019_Mazda3_Premium_sedan%2C_front_right%2C_07-10-2021.jpg",
+      "available": true,
+      "rating": 4.7,
+      "fuel": "Xăng"
+    },
+    {
+      "id": "9",
+      "name": "Honda Civic RS",
+      "type": "Car",
+      "brand": "Honda",
+      "transmission": "Tự động",
+      "seats": 5,
+      "pricePerHour": 130000,
+      "pricePerDay": 1300000,
+      "image": "https://upload.wikimedia.org/wikipedia/commons/c/ca/2022_Honda_Civic_Sedan_Sport%2C_front_left_%28United_States%29.jpg",
+      "available": true,
+      "rating": 4.8,
+      "fuel": "Xăng (1.5L Turbo)"
+    },
+    {
+      "id": "10",
+      "name": "Ford Ranger Wildtrak",
+      "type": "Car",
+      "brand": "Ford",
+      "transmission": "Tự động",
+      "seats": 5,
+      "pricePerHour": 150000,
+      "pricePerDay": 1400000,
+      "image": "https://upload.wikimedia.org/wikipedia/commons/f/ff/2018_Ford_Ranger_Wildtrak_4WD_2.0_Front.jpg",
+      "available": true,
+      "rating": 4.9,
+      "fuel": "Dầu Diesel (Bi-Turbo)"
+    },
+    {
+      "id": "111",
+      "name": "Vespa Sprint 150",
+      "type": "Motorbike",
+      "brand": "Vespa",
+      "transmission": "Tay ga",
+      "seats": 2,
+      "pricePerHour": 40000,
+      "pricePerDay": 350000,
+      "image": "https://upload.wikimedia.org/wikipedia/commons/d/df/Vespa_Sprint_50_Sport.jpg",
+      "available": true,
+      "rating": 4.6,
+      "fuel": "Xăng"
+    },
+    {
+      "id": "112",
+      "name": "Honda Winner X",
+      "type": "Motorbike",
+      "brand": "Honda",
+      "transmission": "Côn tay",
+      "seats": 2,
+      "pricePerHour": 25000,
+      "pricePerDay": 200000,
+      "image": "https://upload.wikimedia.org/wikipedia/commons/f/fa/Honda_Winner_X.jpg",
+      "available": true,
+      "rating": 4.5,
+      "fuel": "Xăng"
+    }
+  ],
+  "bookings": [
+    {
+      "id": "1",
+      "vehicleId": 1,
+      "vehicleName": "VinFast VF8 Plus",
+      "customerName": "Lê Khách Hàng",
+      "phone": "0912345678",
+      "cccd": "001234567890",
+      "unit": "day",
+      "duration": 2,
+      "totalPrice": 2600000,
+      "status": "approved",
+      "paymentMethod": "COD",
+      "paymentDetails": "Thanh toán khi nhận xe (COD)",
+      "createdAt": "2026-07-18T10:00:00.000Z",
+      "assignedStaffId": "2",
+      "assignedStaffName": "Trần Nhân Viên"
+    },
+    {
+      "vehicleId": "3",
+      "vehicleName": "Honda SH 160i ABS",
+      "customerName": "Nguyễn Quản Trị",
+      "phone": "0987654",
+      "cccd": "0987654",
+      "unit": "day",
+      "duration": 1,
+      "totalPrice": 300000,
+      "status": "renting",
+      "paymentMethod": "COD",
+      "paymentDetails": "Thanh toán khi nhận xe (COD)",
+      "createdAt": "2026-07-21T16:02:28.830Z",
+      "id": "7OBsXAPoEgc",
+      "assignedStaffId": "2",
+      "assignedStaffName": "Trần Nhân Viên",
+      "checkOutDetails": {
+        "condition": "Xe sạch sẽ, không trầy xước, đầy đủ gương kính.",
+        "fuel": "100% Pin / Đầy bình xăng",
+        "time": "2026-07-21T16:05:40.617Z"
+      }
+    }
+  ],
+  "$schema": "./node_modules/json-server/schema.json"
+}

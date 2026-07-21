@@ -1,0 +1,494 @@
+/* ============================================
+   DriveShare - File CSS riêng duy nhất
+   Bootstrap + Custom CSS
+   ============================================ */
+
+/* --- CSS Variables (Màu chủ đạo) --- */
+:root {
+  --accent: #10b981;
+  --accent-hover: #059669;
+  --dark-bg: #0f172a;
+  --dark-secondary: #1e293b;
+}
+
+/* --- Global --- */
+body {
+  font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+  background-color: #f8f9fa;
+  color: #1e293b;
+}
+
+.app-wrapper {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.main-content {
+  flex: 1;
+}
+
+/* --- Accent Button --- */
+.btn-accent {
+  background-color: var(--accent);
+  border-color: var(--accent);
+  color: #fff;
+}
+
+.btn-accent:hover {
+  background-color: var(--accent-hover);
+  border-color: var(--accent-hover);
+  color: #fff;
+}
+
+.text-accent {
+  color: var(--accent) !important;
+}
+
+.bg-accent {
+  background-color: var(--accent) !important;
+}
+
+/* --- Badge trên Navbar --- */
+.badge.bg-accent {
+  font-size: 0.7rem;
+}
+
+/* ============================================
+   NAVBAR
+   ============================================ */
+.ds-navbar {
+  background-color: var(--dark-bg);
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.15);
+}
+
+.ds-navbar .brand-icon {
+  font-size: 1.8rem;
+  color: var(--accent);
+}
+
+.ds-navbar .brand-text {
+  font-size: 1.4rem;
+  font-weight: 700;
+  letter-spacing: -0.5px;
+}
+
+.ds-navbar .nav-link {
+  color: #94a3b8 !important;
+  font-weight: 500;
+  font-size: 0.9rem;
+  padding: 0.5rem 0.75rem;
+  border-radius: 0.5rem;
+  transition: all 0.2s;
+}
+
+.ds-navbar .nav-link:hover,
+.ds-navbar .nav-link.active {
+  color: var(--accent) !important;
+  background-color: rgba(255, 255, 255, 0.05);
+}
+
+/* ============================================
+   HERO SECTION
+   ============================================ */
+.hero-section {
+  background: linear-gradient(135deg, #064e3b 0%, var(--dark-bg) 60%, var(--dark-secondary) 100%);
+  padding: 3.5rem 0;
+}
+
+.hero-title {
+  font-size: 2.8rem;
+  font-weight: 800;
+  letter-spacing: -1px;
+}
+
+.hero-subtitle {
+  max-width: 640px;
+  font-size: 1.05rem;
+  color: #94a3b8;
+  line-height: 1.7;
+}
+
+.search-bar {
+  max-width: 680px;
+  background: #fff;
+  border-radius: 0.75rem;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+  overflow: hidden;
+}
+
+.search-bar .input-group-text {
+  padding-left: 1rem;
+}
+
+.search-bar .form-control {
+  font-size: 0.95rem;
+}
+
+.search-bar .form-control:focus {
+  box-shadow: none;
+}
+
+.filter-select {
+  max-width: 160px;
+  border-left: 1px solid #e2e8f0 !important;
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+/* ============================================
+   VEHICLE CARD
+   ============================================ */
+.ds-card {
+  border: 1px solid #e2e8f0;
+  border-radius: 1rem;
+  overflow: hidden;
+  transition: transform 0.25s, box-shadow 0.25s;
+}
+
+.ds-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.08);
+}
+
+.card-img-wrapper {
+  position: relative;
+  height: 200px;
+  overflow: hidden;
+  background: #f1f5f9;
+}
+
+.card-img-wrapper img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s;
+}
+
+.ds-card:hover .card-img-wrapper img {
+  transform: scale(1.05);
+}
+
+.status-badge {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  padding: 4px 12px;
+  border-radius: 50px;
+}
+
+.status-badge.available {
+  background: #d1fae5;
+  color: #065f46;
+}
+
+.status-badge.rented {
+  background: #fee2e2;
+  color: #991b1b;
+}
+
+.rating-badge {
+  position: absolute;
+  bottom: 12px;
+  left: 12px;
+  background: rgba(15, 23, 42, 0.75);
+  backdrop-filter: blur(4px);
+  color: #fff;
+  font-size: 0.8rem;
+  font-weight: 500;
+  padding: 3px 10px;
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.brand-label {
+  font-size: 0.7rem;
+  font-weight: 700;
+  color: var(--accent);
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+}
+
+.type-label {
+  font-size: 0.75rem;
+  color: #94a3b8;
+}
+
+.specs-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 6px;
+  background: #f8fafc;
+  padding: 10px;
+  border-radius: 10px;
+  font-size: 0.8rem;
+  color: #64748b;
+  margin-top: 0.5rem;
+}
+
+.spec-item {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.spec-full {
+  grid-column: span 2;
+}
+
+.price-day {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--accent);
+}
+
+.price-hour {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: #475569;
+}
+
+/* ============================================
+   DETAIL PAGE
+   ============================================ */
+.ds-detail-card {
+  border: 1px solid #e2e8f0;
+  border-radius: 1.25rem;
+  overflow: hidden;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+}
+
+.detail-img-wrapper {
+  position: relative;
+  min-height: 400px;
+  background: #f1f5f9;
+}
+
+.detail-img-wrapper img {
+  object-fit: cover;
+}
+
+.status-badge-lg {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  font-size: 0.8rem;
+  font-weight: 700;
+  padding: 6px 16px;
+  border-radius: 50px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.status-badge-lg.available {
+  background: #d1fae5;
+  color: #065f46;
+}
+
+.status-badge-lg.rented {
+  background: #fee2e2;
+  color: #991b1b;
+}
+
+.specs-detail {
+  background: #f8fafc;
+  padding: 1rem 1.25rem;
+  border-radius: 1rem;
+}
+
+.spec-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 6px 0;
+  font-size: 0.9rem;
+  color: #475569;
+}
+
+.spec-row + .spec-row {
+  border-top: 1px solid #e2e8f0;
+}
+
+/* Calculator Box */
+.calculator-box {
+  background: #f0fdf4;
+  padding: 1.25rem;
+  border-radius: 1rem;
+  border: 1px solid #bbf7d0;
+  margin-top: auto;
+}
+
+.price-summary {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #fff;
+  padding: 1rem;
+  border-radius: 0.75rem;
+  border: 1px solid #bbf7d0;
+}
+
+.total-price {
+  font-size: 1.6rem;
+  font-weight: 800;
+  color: var(--accent);
+}
+
+/* ============================================
+   CART PAGE
+   ============================================ */
+.ds-cart-item {
+  border: 1px solid #e2e8f0;
+  border-radius: 0.75rem;
+  overflow: hidden;
+  transition: box-shadow 0.2s;
+}
+
+.ds-cart-item:hover {
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.06);
+}
+
+.cart-item-img {
+  width: 100%;
+  height: 100px;
+  object-fit: cover;
+  border-radius: 0.75rem 0 0 0.75rem;
+}
+
+.ds-customer-form {
+  border: 1px solid #e2e8f0;
+  border-radius: 1rem;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.04);
+}
+
+.success-box {
+  max-width: 500px;
+  background: #fff;
+  padding: 3rem 2rem;
+  border-radius: 1.25rem;
+  border: 1px solid #d1fae5;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.06);
+}
+
+/* ============================================
+   ADMIN PAGE
+   ============================================ */
+.ds-admin-form {
+  border: 1px solid #e2e8f0;
+  border-radius: 1rem;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.04);
+}
+
+.ds-table {
+  border-radius: 0.75rem;
+  overflow: hidden;
+}
+
+.ds-table thead {
+  background-color: var(--dark-secondary);
+  color: #fff;
+}
+
+.ds-table thead th {
+  font-size: 0.8rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  padding: 0.85rem 1rem;
+  border: none;
+}
+
+.ds-table tbody tr {
+  transition: background-color 0.15s;
+}
+
+.ds-table tbody tr:hover {
+  background-color: #f0fdf4;
+}
+
+.ds-table td {
+  padding: 0.75rem 1rem;
+  vertical-align: middle;
+  border-color: #f1f5f9;
+}
+
+.admin-thumb {
+  width: 70px;
+  height: 45px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+/* ============================================
+   FOOTER
+   ============================================ */
+.ds-footer {
+  background-color: var(--dark-bg);
+  padding: 2.5rem 0 0;
+  margin-top: 2rem;
+}
+
+.footer-links a {
+  color: #94a3b8;
+  text-decoration: none;
+  font-size: 0.9rem;
+  display: block;
+  margin-bottom: 0.5rem;
+  transition: color 0.2s;
+}
+
+.footer-links a:hover {
+  color: var(--accent);
+}
+
+/* ============================================
+   RESPONSIVE
+   ============================================ */
+@media (max-width: 768px) {
+  .hero-title {
+    font-size: 2rem;
+  }
+
+  .hero-subtitle {
+    font-size: 0.95rem;
+  }
+
+  .filter-select {
+    max-width: 100%;
+  }
+
+  .detail-img-wrapper {
+    min-height: 250px;
+  }
+
+  .total-price {
+    font-size: 1.3rem;
+  }
+
+  .admin-thumb {
+    width: 50px;
+    height: 35px;
+  }
+}
+/* --- Login Page --- */
+.login-page {
+  min-height: 80vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #f1f5f9;
+  padding: 2rem 0;
+}
+
+.login-card {
+  background: #fff;
+  border: 1px solid #e2e8f0;
+  border-radius: 1rem;
+  padding: 2.5rem;
+  width: 100%;
+  max-width: 420px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+}
