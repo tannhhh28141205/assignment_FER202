@@ -1,7 +1,7 @@
-﻿import React, { useState, useMemo } from "react";
+import React, { useState, useMemo, useRef } from "react";
 import {
   FaPlus, FaEdit, FaTrash, FaToggleOn, FaToggleOff, FaTimes,
-  FaCar, FaUserShield, FaUsers, FaUserPlus, FaCalendarAlt, FaUserClock,
+  FaCar, FaUserShield, FaUsers, FaUserPlus, FaCalendarAlt,
   FaChartLine, FaClipboardList, FaCheck
 } from "react-icons/fa";
 import Pagination from "../../components/Pagination";
@@ -31,6 +31,8 @@ function AdminDashboard({
   const [editingUserId, setEditingUserId] = useState(null);
   const [userForm, setUserForm] = useState({ ...emptyUserForm });
   const [scheduleFilter, setScheduleFilter] = useState("All");
+  const [imagePreview, setImagePreview] = useState(null);
+  const fileInputRef = useRef(null);
   const [revenueFrom, setRevenueFrom] = useState("");
   const [revenueTo, setRevenueTo] = useState("");
 
@@ -42,8 +44,30 @@ function AdminDashboard({
     const { name, value } = e.target;
     setUserForm(prev => ({ ...prev, [name]: value }));
   };
+  
+  const handleImageChange = (e) => {
+    const file = e.target.files[0];
+    if (!file) return;
+    if (!file.type.startsWith("image/")) {
+      alert("Vui l?ng ch?n file ?nh!"); return;
+    }
+    if (file.size > 5 * 1024 * 1024) {
+      alert("?nh kh?ng ???c v??t qu? 5MB!"); return;
+    }
+    const formData = new FormData();
+    formData.append("image", file);
+    fetch("http://localhost:3002/upload", { method: "POST", body: formData })
+      .then(res => res.json())
+      .then(data => {
+        if (data.imagePath) {
+          setForm(prev => ({ ...prev, image: data.imagePath }));
+          setImagePreview(data.imagePath);
+        }
+      })
+      .catch(() => alert("Upload failed!"));
+  };
   const resetForm = () => {
-    setForm({ ...emptyForm }); setIsEditing(false); setEditingId(null); setShowForm(false);
+    setForm({ ...emptyForm }); setIsEditing(false); setEditingId(null); setShowForm(false); setImagePreview(null); if (fileInputRef.current) fileInputRef.current.value = "";
   };
   const resetUserForm = () => {
     setUserForm({ ...emptyUserForm }); setIsEditingUser(false); setEditingUserId(null); setShowUserForm(false);
@@ -56,7 +80,7 @@ function AdminDashboard({
     const vehicleData = {
       ...form, pricePerHour: Number(form.pricePerHour), pricePerDay: Number(form.pricePerDay),
       seats: Number(form.seats), rating: Number(form.rating),
-      image: form.image || "https://images.unsplash.com/photo-1533473359331-0135ef1b58bf?auto=format&fit=crop&q=80&w=600"
+      image: form.image || "/images/vehicles/default.jpg"
     };
     if (isEditing) updateVehicle(editingId, vehicleData);
     else addVehicle(vehicleData);
@@ -77,7 +101,7 @@ function AdminDashboard({
     }
   };
   const startEdit = (vehicle) => {
-    setForm({ ...vehicle }); setIsEditing(true); setEditingId(vehicle.id); setShowForm(true);
+    setForm({ ...vehicle }); setIsEditing(true); setEditingId(vehicle.id); setShowForm(true); setImagePreview(vehicle.image || null);
   };
   const startEditUser = (u) => {
     setUserForm({ ...u }); setIsEditingUser(true); setEditingUserId(u.id); setShowUserForm(true);
@@ -128,6 +152,7 @@ function AdminDashboard({
     }
   };
   const handleStaffAssignChange = (bookingId, staffId) => {
+    // eslint-disable-next-line eqeqeq
     const staff = onlyStaff.find(s => s.id == staffId);
     if (!staff) handleAssignStaff(bookingId, "", "");
     else handleAssignStaff(bookingId, staff.id, staff.fullName);
@@ -223,7 +248,7 @@ function AdminDashboard({
                       <div className="col-md-3"><label className="form-label fw-bold">Giá/ngày (đ) *</label><input type="number" className="form-control" name="pricePerDay" value={form.pricePerDay} onChange={handleChange} required min="0" /></div>
                       <div className="col-md-4"><label className="form-label fw-bold">Nhiên liệu</label><input type="text" className="form-control" name="fuel" value={form.fuel} onChange={handleChange} /></div>
                       <div className="col-md-2"><label className="form-label fw-bold">Đánh giá</label><input type="number" className="form-control" name="rating" value={form.rating} onChange={handleChange} min="0" max="5" step="0.1" /></div>
-                      <div className="col-md-6"><label className="form-label fw-bold">Link hình ảnh</label><input type="text" className="form-control" name="image" value={form.image} onChange={handleChange} placeholder="https://..." /></div>
+                      <div className="col-md-6"><label className="form-label fw-bold">Hình ảnh</label><input type="file" className="form-control" accept="image/*" onChange={handleImageChange} ref={fileInputRef} />{imagePreview && <img src={imagePreview} alt="Preview" className="mt-2" style={{ width: "120px", height: "80px", objectFit: "cover", borderRadius: "6px", border: "1px solid #dee2e6" }} />}</div>
                     </div>
                     <div className="mt-3"><button type="submit" className="btn btn-accent me-2"><FaPlus className="me-1" /> {isEditing ? "Cập Nhật" : "Thêm Mới"}</button><button type="button" className="btn btn-outline-secondary" onClick={resetForm}>Hủy</button></div>
                   </form>

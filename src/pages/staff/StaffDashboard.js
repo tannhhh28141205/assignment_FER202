@@ -1,4 +1,4 @@
-﻿import React, { useState, useMemo } from 'react';
+import React, { useState, useMemo } from 'react';
 import {
   FaUserCheck, FaCar, FaHandHoldingUsd,
   FaToggleOn, FaToggleOff, FaHistory,
@@ -34,6 +34,7 @@ function StaffDashboard({
 
   const [historyDate, setHistoryDate] = useState('');
 
+  // eslint-disable-next-line eqeqeq
   const myBookings = bookings.filter(b => b.assignedStaffId == user.id);
 
   const filteredVehicles = vehicles.filter(v => {

@@ -1,4 +1,4 @@
-﻿import React, { useState } from 'react';
+import React, { useState } from 'react';
 import { NavLink } from 'react-router-dom';
 import { FaCarSide, FaCompass, FaClipboardList, FaUserShield, FaUserCog, FaSignOutAlt, FaSignInAlt, FaUser } from 'react-icons/fa';
 
@@ -60,7 +60,7 @@ function Navbar({ cartCount, user, onLogout }) {
               </li>
             )}
 
-            {user && user.role === 'customer' && (
+            {user && (
               <li className="nav-item">
                 <NavLink className="nav-link d-flex align-items-center gap-1" to="/profile" onClick={() => setIsOpen(false)}>
                   <FaUser /> Tài Khoản
@@ -71,7 +71,7 @@ function Navbar({ cartCount, user, onLogout }) {
             <li className="nav-item ms-lg-2">
               {user ? (
                 <div className="d-flex align-items-center gap-2">
-                  <span className="text-light small fw-bold">Hi, {user.fullName}</span>
+                  <span className="text-light small fw-bold">{user.fullName}</span>
                   <button className="btn btn-sm btn-outline-light d-flex align-items-center gap-1" onClick={onLogout}>
                     <FaSignOutAlt /> Thoát
                   </button>

@@ -15,6 +15,14 @@ function Home({ vehicles, loading }) {
     return ['All', ...Array.from(set)];
   }, [vehicles]);
 
+  const brandCounts = useMemo(() => {
+    const counts = { All: vehicles.length };
+    vehicles.forEach(v => {
+      counts[v.brand] = (counts[v.brand] || 0) + 1;
+    });
+    return counts;
+  }, [vehicles]);
+
   const filteredVehicles = useMemo(() => {
     return vehicles.filter(v => {
       const matchSearch =
@@ -77,16 +85,15 @@ function Home({ vehicles, loading }) {
               Tìm thấy {filteredVehicles.length} phương tiện phù hợp
             </p>
           </div>
-          <div className="d-flex gap-2 flex-wrap">
+          <div className="brand-filter-bar">
             {brands.map(brand => (
               <button
                 key={brand}
-                className={`btn btn-sm ${
-                  selectedBrand === brand ? 'btn-accent' : 'btn-outline-secondary'
-                }`}
+                className={`brand-filter-btn ${selectedBrand === brand ? 'active' : ''}`}
                 onClick={() => setSelectedBrand(brand)}
               >
                 {brand === 'All' ? 'Tất cả hãng' : brand}
+                <span className="brand-count">{brandCounts[brand] || 0}</span>
               </button>
             ))}
           </div>

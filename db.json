@@ -60,7 +60,7 @@
       "seats": 5,
       "pricePerHour": 120000,
       "pricePerDay": 1300000,
-      "image": "https://upload.wikimedia.org/wikipedia/commons/e/ec/VinFast_VF_8_at_Motorshow_2022.jpg",
+      "image": "/images/vehicles/vehicle_1.jpg",
       "available": true,
       "rating": 4.9,
       "fuel": "Điện (Pin 88 kWh)"
@@ -74,7 +74,7 @@
       "seats": 5,
       "pricePerHour": 140000,
       "pricePerDay": 1500000,
-      "image": "https://upload.wikimedia.org/wikipedia/commons/a/ac/2018_Toyota_Camry_%28ASV70R%29_Ascent_sedan_%282018-08-27%29_01.jpg",
+      "image": "/images/vehicles/vehicle_2.jpg",
       "available": true,
       "rating": 4.8,
       "fuel": "Xăng"
@@ -88,8 +88,8 @@
       "seats": 2,
       "pricePerHour": 35000,
       "pricePerDay": 300000,
-      "image": "https://upload.wikimedia.org/wikipedia/commons/e/e9/Honda_SH150i_2020.jpg",
-      "available": false,
+      "image": "/images/vehicles/vehicle_3.jpg",
+      "available": true,
       "rating": 4.7,
       "fuel": "Xăng"
     },
@@ -102,8 +102,8 @@
       "seats": 4,
       "pricePerHour": 80000,
       "pricePerDay": 800000,
-      "image": "https://upload.wikimedia.org/wikipedia/commons/b/b3/VinFast_VF_3_in_Vietnam_02.jpg",
-      "available": false,
+      "image": "/images/vehicles/vehicle_4.jpg",
+      "available": true,
       "rating": 4.6,
       "fuel": "Điện (Mini SUV)"
     },
@@ -116,7 +116,7 @@
       "seats": 2,
       "pricePerHour": 25000,
       "pricePerDay": 200000,
-      "image": "https://upload.wikimedia.org/wikipedia/commons/b/b0/2019_Yamaha_Exciter_150_GP_Edition.jpg",
+      "image": "/images/vehicles/vehicle_5.jpg",
       "available": true,
       "rating": 4.5,
       "fuel": "Xăng"
@@ -130,7 +130,7 @@
       "seats": 5,
       "pricePerHour": 100000,
       "pricePerDay": 1000000,
-      "image": "https://upload.wikimedia.org/wikipedia/commons/d/dc/2018_Hyundai_Accent_SEL_1.6L_front_US.jpg",
+      "image": "/images/vehicles/vehicle_6.jpg",
       "available": true,
       "rating": 4.4,
       "fuel": "Xăng"
@@ -144,7 +144,7 @@
       "seats": 7,
       "pricePerHour": 220000,
       "pricePerDay": 2200000,
-      "image": "https://upload.wikimedia.org/wikipedia/commons/2/23/VinFast_VF_9_at_Motorshow_2022.jpg",
+      "image": "/images/vehicles/vehicle_7.jpg",
       "available": true,
       "rating": 5,
       "fuel": "Điện (Pin 123 kWh)"
@@ -158,7 +158,7 @@
       "seats": 5,
       "pricePerHour": 110000,
       "pricePerDay": 1100000,
-      "image": "https://upload.wikimedia.org/wikipedia/commons/c/ca/2019_Mazda3_Premium_sedan%2C_front_right%2C_07-10-2021.jpg",
+      "image": "/images/vehicles/vehicle_8.jpg",
       "available": true,
       "rating": 4.7,
       "fuel": "Xăng"
@@ -172,7 +172,7 @@
       "seats": 5,
       "pricePerHour": 130000,
       "pricePerDay": 1300000,
-      "image": "https://upload.wikimedia.org/wikipedia/commons/c/ca/2022_Honda_Civic_Sedan_Sport%2C_front_left_%28United_States%29.jpg",
+      "image": "/images/vehicles/vehicle_9.jpg",
       "available": true,
       "rating": 4.8,
       "fuel": "Xăng (1.5L Turbo)"
@@ -186,7 +186,7 @@
       "seats": 5,
       "pricePerHour": 150000,
       "pricePerDay": 1400000,
-      "image": "https://upload.wikimedia.org/wikipedia/commons/f/ff/2018_Ford_Ranger_Wildtrak_4WD_2.0_Front.jpg",
+      "image": "/images/vehicles/vehicle_10.jpg",
       "available": true,
       "rating": 4.9,
       "fuel": "Dầu Diesel (Bi-Turbo)"
@@ -200,7 +200,7 @@
       "seats": 2,
       "pricePerHour": 40000,
       "pricePerDay": 350000,
-      "image": "https://upload.wikimedia.org/wikipedia/commons/d/df/Vespa_Sprint_50_Sport.jpg",
+      "image": "/images/vehicles/vehicle_111.jpg",
       "available": true,
       "rating": 4.6,
       "fuel": "Xăng"
@@ -214,7 +214,7 @@
       "seats": 2,
       "pricePerHour": 25000,
       "pricePerDay": 200000,
-      "image": "https://upload.wikimedia.org/wikipedia/commons/f/fa/Honda_Winner_X.jpg",
+      "image": "/images/vehicles/vehicle_112.jpg",
       "available": true,
       "rating": 4.5,
       "fuel": "Xăng"
@@ -231,12 +231,17 @@
       "unit": "day",
       "duration": 2,
       "totalPrice": 2600000,
-      "status": "approved",
+      "status": "renting",
       "paymentMethod": "COD",
       "paymentDetails": "Thanh toán khi nhận xe (COD)",
       "createdAt": "2026-07-18T10:00:00.000Z",
       "assignedStaffId": "2",
-      "assignedStaffName": "Trần Nhân Viên"
+      "assignedStaffName": "Trần Nhân Viên",
+      "checkOutDetails": {
+        "condition": "Xe sạch sẽ, không trầy xước, đầy đủ gương kính.",
+        "fuel": "100% Pin / Đầy bình xăng",
+        "time": "2026-07-22T02:07:09.784Z"
+      }
     },
     {
       "vehicleId": "3",

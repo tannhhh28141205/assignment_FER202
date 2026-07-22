@@ -1,4 +1,4 @@
-﻿import React from 'react';
+import React from 'react';
 
 const Pagination = ({ itemsPerPage, totalItems, paginate, currentPage }) => {
   const pageNumbers = [];

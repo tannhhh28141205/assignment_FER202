@@ -1,4 +1,4 @@
-﻿import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Routes, Route, Navigate } from 'react-router-dom';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
@@ -162,6 +162,7 @@ function App() {
 
   // Phê duyệt cập nhật trạng thái đơn
   const handleApproveBooking = (bookingId, status) => {
+    // eslint-disable-next-line eqeqeq
     const booking = bookings.find(b => b.id == bookingId);
     if (!booking) return;
     
@@ -172,6 +173,7 @@ function App() {
     });
 
     let vehiclePromise = Promise.resolve();
+    // eslint-disable-next-line eqeqeq
     const vehicle = vehicles.find(v => v.id == booking.vehicleId);
     if (vehicle) {
       const isAvailable = status === "rejected" ? true : false;
@@ -190,6 +192,7 @@ function App() {
 
   // Gán việc cho Staff
   const handleAssignStaff = (bookingId, staffId, staffName) => {
+    // eslint-disable-next-line eqeqeq
     const booking = bookings.find(b => b.id == bookingId);
     if (!booking) return;
 
@@ -204,8 +207,10 @@ function App() {
 
   // Bàn giao xe (Check-out)
   const handleDeliverVehicle = (bookingId, vehicleId, checkOutDetails) => {
+    // eslint-disable-next-line eqeqeq
     const booking = bookings.find(b => b.id == bookingId);
-    const vehicle = vehicles.find(v => v.id === vehicleId);
+    // eslint-disable-next-line eqeqeq
+    const vehicle = vehicles.find(v => v.id == vehicleId);
     if (!booking || !vehicle) return;
 
     const bookingPromise = fetch(`${API_URL}/bookings/${bookingId}`, {
@@ -228,8 +233,10 @@ function App() {
 
   // Thu hồi xe (Check-in)
   const handleReceiveVehicle = (bookingId, vehicleId, checkInDetails) => {
+    // eslint-disable-next-line eqeqeq
     const booking = bookings.find(b => b.id == bookingId);
-    const vehicle = vehicles.find(v => v.id === vehicleId);
+    // eslint-disable-next-line eqeqeq
+    const vehicle = vehicles.find(v => v.id == vehicleId);
     if (!booking || !vehicle) return;
 
     const bookingPromise = fetch(`${API_URL}/bookings/${bookingId}`, {
@@ -278,7 +285,7 @@ function App() {
           <Route
             path="/profile"
             element={
-              user && user.role === 'customer' ? (
+              user ? (
                 <Profile
                   user={user}
                   bookings={bookings}

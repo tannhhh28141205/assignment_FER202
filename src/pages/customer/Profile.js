@@ -1,4 +1,4 @@
-﻿import React, { useState, useMemo } from 'react';
+import React, { useState, useMemo } from 'react';
 import { FaUser, FaHistory, FaIdCard, FaPhone, FaEnvelope, FaTimes, FaEdit, FaSave, FaMapMarkerAlt } from 'react-icons/fa';
 import Pagination from '../../components/Pagination';
 
@@ -18,8 +18,11 @@ function Profile({ user, bookings = [], updateUser, onUserUpdated }) {
   const [saving, setSaving] = useState(false);
 
   const myOrders = useMemo(() => {
+    if (user.role === 'admin') return bookings;
+    // eslint-disable-next-line eqeqeq
+    if (user.role === 'staff') return bookings.filter(b => b.assignedStaffId == user.id);
     return bookings.filter(b => b.customerName === user.fullName);
-  }, [bookings, user.fullName]);
+  }, [bookings, user.fullName, user.role, user.id]);
 
   const filteredOrders = useMemo(() => {
     if (!filterDate) return myOrders;
@@ -110,6 +113,7 @@ function Profile({ user, bookings = [], updateUser, onUserUpdated }) {
       </div>
 
       {/* Stats */}
+        {user.role === 'customer' && (
       <div className="row g-3 mb-4">
         <div className="col-6 col-md-3">
           <div className="card p-3 text-center shadow-sm border-0 bg-light">
@@ -137,7 +141,9 @@ function Profile({ user, bookings = [], updateUser, onUserUpdated }) {
         </div>
       </div>
 
-      {/* Tabs */}
+      )}
+
+        {/* Tabs */}
       <div className="card">
         <div className="card-header bg-white p-0">
           <ul className="nav nav-tabs border-0 flex-column flex-sm-row">
@@ -151,7 +157,7 @@ function Profile({ user, bookings = [], updateUser, onUserUpdated }) {
                 <FaIdCard /> Thông Tin Cá Nhân
               </button>
             </li>
-            <li className="nav-item m-0">
+            {user.role === 'customer' && (<li className="nav-item m-0">
               <button
                 className={`nav-link rounded-0 py-3 px-4 fw-bold border-0 d-flex align-items-center gap-2 ${
                   activeTab === 'orders' ? 'active border-bottom border-success text-accent' : 'text-secondary'
@@ -163,7 +169,7 @@ function Profile({ user, bookings = [], updateUser, onUserUpdated }) {
                   <span className="badge bg-warning text-dark rounded-pill">{stats.pending + stats.renting}</span>
                 )}
               </button>
-            </li>
+            </li>)}
           </ul>
         </div>
 
@@ -263,7 +269,7 @@ function Profile({ user, bookings = [], updateUser, onUserUpdated }) {
           )}
 
           {/* TAB 2: LỊCH SỬ ĐẶT XE */}
-          {activeTab === 'orders' && (
+          {user.role === 'customer' && activeTab === 'orders' && (
             <div>
               <div className="d-flex align-items-end gap-3 mb-4 flex-wrap">
                 <div>
